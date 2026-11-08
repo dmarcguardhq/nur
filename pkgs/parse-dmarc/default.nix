@@ -9,24 +9,24 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "1xsdrnckwsflrcdjmcxg5bpkqq2hipxcn5m8hj9md8avyav1ss1w";
-    x86_64-linux = "0vwxr7qfrhdxacx5c8rmkg2algd1xmpqhppl8faca2lk3nx5cvl1";
-    aarch64-linux = "1vpw4f94xsr80xzv2qmvl53gisjs531kica2b7w6mm4pkblmkkmp";
-    x86_64-darwin = "1qjg0af93ndlykfvllk9nw1cy7pq6kchwlrggxf9dxa8d3rqp8w6";
-    aarch64-darwin = "12xljii4zlfir7p656gdvssvqpszj329d9ff8160157265wshmfb";
+    i686-linux = "04yxpj0h55v006pr2537vz4f6rcdkv2w8j665fsfmgj1cj0qhq0g";
+    x86_64-linux = "04scnqc4cs9frw0s23w4kga1njaqrxx268n04j17xarp548c9izr";
+    aarch64-linux = "1094fphbcnjxjf35nbk4sgy4cp2qbn1kh1jpzy82m991x1ckpk95";
+    x86_64-darwin = "1nzidrbvacikgjva8pqpxnvf35jrvfnwh5g11p8lv2wwqjk8haz0";
+    aarch64-darwin = "05pj2lmy72fmlmy08nf6axspkssqpqryvvihfjkbbk8vv7xyfv47";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.2/parse-dmarc_linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.2/parse-dmarc_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.2/parse-dmarc_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.2/parse-dmarc_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.2/parse-dmarc_darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.3/parse-dmarc_linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.3/parse-dmarc_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.3/parse-dmarc_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.3/parse-dmarc_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/dmarcguardhq/parse-dmarc/releases/download/v1.7.3/parse-dmarc_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "parse-dmarc";
-  version = "1.7.2";
+  version = "1.7.3";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
